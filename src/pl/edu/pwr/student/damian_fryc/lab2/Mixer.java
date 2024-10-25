@@ -14,8 +14,5 @@ public class Mixer {
 		this.tables = tables;
 	}
 
-	String findBest(int[] wagi)
-	{
-		return "";
-	}
+
 }
