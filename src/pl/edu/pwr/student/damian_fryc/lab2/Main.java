@@ -14,10 +14,13 @@ public class Main {
 	static ArrayList<Table> tables;
 	static ArrayList<Player> players;
 
+	static int chairCount = 0;
+
 	static float[] weights = new float[]{1,1,1};
 
-	static float bestCombinationNumber = 0;
+	static float bestCombinationNumber = Float.NEGATIVE_INFINITY;
 	static String bestCombinationString = "";
+	static long startTime;
 
 	private static boolean loadFiles() {
         games = new ArrayList<>();
@@ -85,32 +88,68 @@ public class Main {
 		weights[2] = scanner.nextFloat();
 	}
 
+	private static void optimisation() {
+
+		// sorting players by preferences count
+		players.sort(Comparator.comparingInt(p -> p.preferences.length));
+		tables.sort(Comparator.comparingInt(p -> p.maxPlayersAtTheTable));
+		games.sort(Comparator.comparingInt(p -> p.maxPlayer));
+
+		int maxTableSize = 0;
+		for (Table table : tables)
+			if(table.maxPlayersAtTheTable > maxTableSize)
+				maxTableSize = table.maxPlayersAtTheTable;
+
+			// finding games that require more players than maximum amount of seats
+		Iterator<Game> gIter = games.iterator();
+		int minGameSize = 9999;
+		while (gIter.hasNext()) {
+			Game game = gIter.next();
+			if(game.minPlayer < minGameSize)  minGameSize = game.minPlayer;
+			if (game.maxPlayer > maxTableSize) {
+				game.maxPlayer = maxTableSize;
+				if(game.maxPlayer < game.minPlayer)
+					gIter.remove();
+			}
+		}
+			// removing too small tables
+		Iterator<Table> tIter = tables.iterator();
+		while (tIter.hasNext()) {
+			Table table = tIter.next();
+			if (table.maxPlayersAtTheTable < minGameSize)
+				tIter.remove();
+		}
+
+	}
 	private static void checkIfBest(){
-//		int allPlayingPlayers = 0;
-//		float allPlayingPlayersSatisfaction = 0;
-//		int allGamesOnTables = 0;
-//		int usedTables = 0;
-//		for (Table table : tables)
-//		{
-////			allPlayingPlayers += table.countPlayers();
-////			allPlayingPlayersSatisfaction += table.countPlayersSatisfaction();
-//			allGamesOnTables += table.getGamesOnTableCount();
-//			if (!table.gamesOnTable.isEmpty()) usedTables++;
-//		}
-//		int table_penelty1 = usedTables - allGamesOnTables;
-		int table_penelty = Table.usedTables - Game.usedGames;
-//		if(table_penelty1 != table_penelty)
-//			System.out.println("ASDASD");
+		int table_penelty = Table.usedTables - Game.gamesOnTables;
 		if(table_penelty > 0) table_penelty = 0;
 
-//		float combinationNumber = weights[0] * allPlayingPlayers + weights[1] * allPlayingPlayersSatisfaction + weights[2] * table_penelty;
-		float combinationNumber = weights[0] * Player.playingPlayerCount + weights[1] * Player.playerSatisfactionCount + weights[2] * table_penelty;
+		float playerSatisfactionCount = 0;
+		int playingPlayerCount = 0;
+		for (Table table : tables){
+			for (Game game : table.gamesOnTable){
+				for (Player player : game.assignedPlayers){
+					if (player == null) continue;
+					playerSatisfactionCount += player.satisfaction;
+					playingPlayerCount++;
+				}
+			}
+		}
+
+
+		float combinationNumber = weights[0] * playingPlayerCount + weights[1] * playerSatisfactionCount + weights[2] * table_penelty;
 		if(combinationNumber > bestCombinationNumber){
 			bestCombinationNumber = combinationNumber;
 
 			StringBuilder newBest = new StringBuilder();
 			for (Table table : tables)
 				newBest.append(table);
+			newBest.append("\nPlaying player: ").append(playingPlayerCount).append(", out of: ").append(players.size());
+			newBest.append("\nUnused seats: ").append(chairCount - playingPlayerCount);
+			newBest.append("\nSatisfaction: ").append(playerSatisfactionCount);
+			newBest.append("\nTable penalty: ").append(table_penelty);
+			newBest.append("\nOverall score: ").append(bestCombinationNumber);
 			bestCombinationString = newBest.toString();
 		}
 	}
@@ -120,13 +159,15 @@ public class Main {
 			return;
 		}
 
-		for (int k = 0; k < games.size(); k++) {
-			if(games.get(k).playing && games.get(k).assignedToTable == 0) {
-				tables.get(i).addGame(games.get(k));
+		for (int j = 0; j < games.size(); j++) {
+			if(games.get(j).playing && games.get(j).assignedToTable == 0) {
+				if(!tables.get(i).addGame(games.get(j))) continue;
 				assignGameToTable(i+1);
 			}
 		}
-		if(Table.usedTables == Game.usedGames) {
+
+//		if(Table.usedTables == Game.playingGames) {
+		if(Game.playingGames == Game.gamesOnTables) {
 			checkIfBest();
 			tables.get(i).clearGames();
 			return;
@@ -135,16 +176,13 @@ public class Main {
 		tables.get(i).clearGames();
 	}
 	static void assignPlayer(int i) {
+		if(bestCombinationNumber != Float.NEGATIVE_INFINITY && (System.currentTimeMillis() - startTime) > 1000 * 3)
+			return;
 			// all players are assigned
 		if(i == players.size()) {
-			for (Game game : games) {
-				if (game.getPlayerCount() > 0){
-					if(!game.playing) return;
-//					if (game.isPlayerCountGood()) game.playing = true;
-//					else return;
-				}
-//				else game.playing = false;
-			}
+//			for (Game game : games) {
+//				if (game.asignedPlayerCount > 0 && !game.playing) return;
+//			}
 				// assign games to tables
 			assignGameToTable(0);
 			return;
@@ -154,16 +192,13 @@ public class Main {
 		for (int j = 0; j < player.preferences.length; j++) {
 			for (int k = 0; k < games.size(); k++) {
 				if(games.get(k).id == player.preferences[j]) {
+//					if(games.get(k).minPlayer - games.get(k).asignedPlayerCount > (players.size() - i)) continue;
 					if(!games.get(k).assignPlayer(player, j)) continue; // game has no slots
 					assignPlayer(i+1);
 					games.get(k).removePlayer(player);
 				}
 			}
-//			if(Player.playingPlayerCount == players.size()) {
-//				assignPlayer(players.size());
-//				return;
-//			}
-//			assignPlayer(i+1);
+			assignPlayer(i+1);
 		}
 	}
 	static void findBestCombination() {
@@ -177,16 +212,13 @@ public class Main {
 				System.exit(1);
 		}
 //		setWeights(scanner);
-			// sorting players by preferences count
-		players.sort(Comparator.comparingInt(p -> p.preferences.length));
-		tables.sort(Comparator.comparingInt(p -> p.maxPlayersAtTheTable));
-		games.sort(Comparator.comparingInt(p -> p.maxPlayer));
+		optimisation();
+		for (Table table : tables)
+			chairCount += table.maxPlayersAtTheTable;
 
-		long time = System.currentTimeMillis();
+		startTime = System.currentTimeMillis();
 		findBestCombination();
-		System.out.println(bestCombinationNumber);
 		System.out.println(bestCombinationString);
-		System.out.println("Time: " + (System.currentTimeMillis() - time) / 1000.0);
-		return;
-	}
+		System.out.println("Time: " + (System.currentTimeMillis() - startTime) / 1000.0);
+    }
 }
