@@ -26,6 +26,7 @@ public class Main {
 			if(Objects.equals(scanner.nextLine(), "x"))
 				System.exit(1);
 		}
+
 		while((players = DataLoader.loadPlayers(playersFileName)).isEmpty()){
 			System.out.println("Try to load data again ('x' to exit)");
 			if(Objects.equals(scanner.nextLine(), "x"))

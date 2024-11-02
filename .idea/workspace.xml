@@ -4,18 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="be8c5eec-054a-4a30-8cec-4c7c2e79bee6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/pl/edu/pwr/student/damian_fryc/lab2/DataLoader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pl/edu/pwr/student/damian_fryc/lab2/OptimizationResult.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pl/edu/pwr/student/damian_fryc/lab2/Solver.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wagi.txt" afterDir="false" />
+    <list default="true" id="be8c5eec-054a-4a30-8cec-4c7c2e79bee6" name="Changes" comment="Added DataLoader and Solver to make Main smaller">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gry.txt" beforeDir="false" afterPath="$PROJECT_DIR$/gry.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/preferencje.txt" beforeDir="false" afterPath="$PROJECT_DIR$/preferencje.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pl/edu/pwr/student/damian_fryc/lab2/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pl/edu/pwr/student/damian_fryc/lab2/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pl/edu/pwr/student/damian_fryc/lab2/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pl/edu/pwr/student/damian_fryc/lab2/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pl/edu/pwr/student/damian_fryc/lab2/Mixer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pl/edu/pwr/student/damian_fryc/lab2/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pl/edu/pwr/student/damian_fryc/lab2/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pl/edu/pwr/student/damian_fryc/lab2/Table.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pl/edu/pwr/student/damian_fryc/lab2/Table.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pl/edu/pwr/student/damian_fryc/lab2/Solver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pl/edu/pwr/student/damian_fryc/lab2/Solver.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/stoliki.txt" beforeDir="false" afterPath="$PROJECT_DIR$/stoliki.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -51,7 +46,9 @@
   "keyToString": {
     "Application.Main.executor": "Debug",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
     "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -100,10 +97,24 @@
       <updated>1730376608730</updated>
       <workItem from="1730376612273" duration="52000" />
       <workItem from="1730555957136" duration="15908000" />
+      <workItem from="1730577496034" duration="3255000" />
     </task>
+    <task id="LOCAL-00001" summary="Added DataLoader and Solver to make Main smaller">
+      <option name="closed" value="true" />
+      <created>1730577796263</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1730577796263</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added DataLoader and Solver to make Main smaller" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added DataLoader and Solver to make Main smaller" />
   </component>
 </project>

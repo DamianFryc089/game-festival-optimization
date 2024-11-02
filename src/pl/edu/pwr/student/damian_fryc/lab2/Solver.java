@@ -78,9 +78,6 @@ public class Solver {
 
 		// The function has iterated through all players
 		if(i == players.size()) {
-//			for (Game game : games) {
-//				if (game.asignedPlayerCount > 0 && !game.playing) return;
-//			}
 			assignGameToTable(0);
 			return;
 		}
@@ -90,7 +87,6 @@ public class Solver {
 		for (int j = 0; j < player.preferences.length; j++) {
 			for (int k = 0; k < games.size(); k++) {
 				if(games.get(k).id == player.preferences[j]) {
-//					if(games.get(k).minPlayer - games.get(k).asignedPlayerCount > (players.size() - i)) continue;
 					if(!games.get(k).assignPlayer(player, j)) continue; // game has no free slots
 					assignPlayer(i+1);
 					games.get(k).removePlayer(player);
@@ -127,8 +123,8 @@ public class Solver {
 	}
 
 	private void checkIfBest(){
-		int table_penelty = Table.usedTables - Game.gamesOnTables;
-		if(table_penelty > 0) table_penelty = 0;
+		int tablePenelty = Table.usedTables - Game.gamesOnTables;
+		if(tablePenelty > 0) tablePenelty = 0;
 
 			// Accumulate satisfaction scores and count the total number of assigned players
 		float playerSatisfactionCount = 0;
@@ -143,7 +139,7 @@ public class Solver {
 			}
 		}
 
-		float combinationNumber = weights[0] * playingPlayerCount + weights[1] * playerSatisfactionCount + weights[2] * table_penelty;
+		float combinationNumber = weights[0] * playingPlayerCount + weights[1] * playerSatisfactionCount + weights[2] * tablePenelty;
 		if(combinationNumber > bestCombinationNumber){
 			bestCombinationNumber = combinationNumber;
 
@@ -156,7 +152,7 @@ public class Solver {
 			optimizationResult.allPlayers = players.size();
 			optimizationResult.unusedSeats = chairCount - playingPlayerCount;
 			optimizationResult.sumOfSatisfactions = playerSatisfactionCount;
-			optimizationResult.tablePenalty = -table_penelty;
+			optimizationResult.tablePenalty = -tablePenelty;
 			optimizationResult.weights = weights;
 			optimizationResult.score = bestCombinationNumber;
 		}
