@@ -12,4 +12,14 @@ public class Player {
 		this.id = id;
 		this.preferences = Arrays.copyOf(preferences, preferences.length);
 	}
+
+	// Copy constructor
+	public Player(Player original) {
+		this.id = original.id;
+		this.satisfaction = original.satisfaction;
+
+		// Deep copy of the preferences array
+		this.preferences = new int[original.preferences.length];
+		System.arraycopy(original.preferences, 0, this.preferences, 0, original.preferences.length);
+	}
 }

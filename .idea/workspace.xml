@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AnalysisUIOptions">
-    <option name="ANALYZE_INJECTED_CODE" value="false" />
-  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c12ebe46-88b3-471e-948d-267a9bbdbbbb" name="Changes" comment="Slow but working - no skipping">
+    <list default="true" id="be8c5eec-054a-4a30-8cec-4c7c2e79bee6" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/pl/edu/pwr/student/damian_fryc/lab2/DataLoader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pl/edu/pwr/student/damian_fryc/lab2/OptimizationResult.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pl/edu/pwr/student/damian_fryc/lab2/Solver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wagi.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gry.txt" beforeDir="false" afterPath="$PROJECT_DIR$/gry.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notes" beforeDir="false" afterPath="$PROJECT_DIR$/notes" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/preferencje.txt" beforeDir="false" afterPath="$PROJECT_DIR$/preferencje.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pl/edu/pwr/student/damian_fryc/lab2/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pl/edu/pwr/student/damian_fryc/lab2/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pl/edu/pwr/student/damian_fryc/lab2/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pl/edu/pwr/student/damian_fryc/lab2/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pl/edu/pwr/student/damian_fryc/lab2/Mixer.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pl/edu/pwr/student/damian_fryc/lab2/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pl/edu/pwr/student/damian_fryc/lab2/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pl/edu/pwr/student/damian_fryc/lab2/Table.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pl/edu/pwr/student/damian_fryc/lab2/Table.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/stoliki.txt" beforeDir="false" afterPath="$PROJECT_DIR$/stoliki.txt" afterDir="false" />
@@ -26,18 +26,22 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="module-info" />
         <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 0
+  &quot;associatedIndex&quot;: 1
 }</component>
-  <component name="ProjectId" id="2nk68jvUotnCGl62GMncvKlzwpj" />
+  <component name="ProjectId" id="2oCbf2w02qKKCmAFj43QKGlqS0P" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -46,28 +50,18 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.Main.executor": "Debug",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/damia/Programowanie/JęzykiProgramowania/GameFestivalOptimization",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\damia\Studia\Sem 3\Jezyki Programowania\GryPlanszowe" />
-    </key>
-  </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="pl.edu.pwr.student.damian_fryc.lab2.Main" />
@@ -91,63 +85,25 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="jdk-21.0.2-temurin-21.0.2-4caba194b151-7da56cdf" />
+        <option value="bundled-jdk-9f38398b9061-18abd8497189-intellij.indexing.shared.core-IU-241.14494.240" />
+        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-IU-241.14494.240" />
       </set>
     </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="c12ebe46-88b3-471e-948d-267a9bbdbbbb" name="Changes" comment="" />
-      <created>1729504569301</created>
+      <changelist id="be8c5eec-054a-4a30-8cec-4c7c2e79bee6" name="Changes" comment="" />
+      <created>1730376608730</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1729504569301</updated>
-      <workItem from="1729504570336" duration="424000" />
-      <workItem from="1729505702356" duration="2218000" />
-      <workItem from="1729507952242" duration="22000" />
-      <workItem from="1729797551587" duration="393000" />
-      <workItem from="1729797958817" duration="392000" />
-      <workItem from="1729799745526" duration="18351000" />
-      <workItem from="1729885695462" duration="20308000" />
+      <updated>1730376608730</updated>
+      <workItem from="1730376612273" duration="52000" />
+      <workItem from="1730555957136" duration="15908000" />
     </task>
-    <task id="LOCAL-00001" summary="Slow but working - no skipping">
-      <option name="closed" value="true" />
-      <created>1729897025873</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1729897025873</updated>
-    </task>
-    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="Slow but working - no skipping" />
-    <option name="LAST_COMMIT_MESSAGE" value="Slow but working - no skipping" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <breakpoint enabled="true" type="java-exception">
-          <properties class="java.lang.StringIndexOutOfBoundsException" package="java.lang" />
-          <option name="timeStamp" value="9" />
-        </breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

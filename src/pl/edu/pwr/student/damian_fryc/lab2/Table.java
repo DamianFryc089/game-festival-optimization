@@ -16,15 +16,26 @@ public class Table {
 		this.maxPlayersAtTheTable = maxPlayersAtTheTable;
 	}
 
+	// Copy constructor
+	Table(Table original) {
+		this.id = original.id;
+		this.maxPlayersAtTheTable = original.maxPlayersAtTheTable;
+		this.playersAtTheTable = original.playersAtTheTable;
+
+		this.gamesOnTable = new ArrayList<>();
+		for (Game game : original.gamesOnTable) {
+			this.gamesOnTable.add(new Game(game));
+		}
+	}
 	boolean addGame(Game game) {
-		if(playersAtTheTable + game.asignedPlayerCount <= maxPlayersAtTheTable)
+		if(playersAtTheTable + game.assignedPlayerCount <= maxPlayersAtTheTable)
 		{
 			if(gamesOnTable.isEmpty())
 				usedTables++;
 			gamesOnTable.add(game);
 			game.assignedToTable = id;
 			Game.gamesOnTables++;
-			playersAtTheTable += game.asignedPlayerCount;
+			playersAtTheTable += game.assignedPlayerCount;
 			return true;
 		}
 		else

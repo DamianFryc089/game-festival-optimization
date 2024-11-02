@@ -11,7 +11,7 @@ public class Game {
 	Player[] assignedPlayers;
 
 	int assignedToTable = 0;
-	int asignedPlayerCount = 0;
+	int assignedPlayerCount = 0;
 	boolean playing = false;
 
 	Game(int id, int minPlayer, int maxPlayer) {
@@ -20,20 +20,28 @@ public class Game {
 		this.maxPlayer = maxPlayer;
 		assignedPlayers = new Player[maxPlayer];
 	}
+
+	// Copy constructor
+	public Game(Game original) {
+		this.id = original.id;
+		this.minPlayer = original.minPlayer;
+		this.maxPlayer = original.maxPlayer;
+		this.assignedToTable = original.assignedToTable;
+		this.assignedPlayerCount = original.assignedPlayerCount;
+		this.playing = original.playing;
+
+		this.assignedPlayers = new Player[assignedPlayerCount];
+		for (int i = 0; i < assignedPlayerCount; i++) {
+			this.assignedPlayers[i] = new Player(original.assignedPlayers[i]);
+		}
+	}
 	boolean assignPlayer(Player player, int preferenceNumber){
-//		boolean xxx = false;
-//		for (int i = 0; i < assignedPlayers.length; i++) {
-//			if(xxx && assignedPlayers[i] != null)
-//				System.out.println("ASDASD");
-//			if(assignedPlayers[i] == null) xxx = true;
-//		}
+		if(assignedPlayerCount + 1 > maxPlayer) return false;
 
-		if(asignedPlayerCount + 1 > maxPlayer) return false;
+		assignedPlayers[assignedPlayerCount] = player;
+		assignedPlayerCount++;
 
-		assignedPlayers[asignedPlayerCount] = player;
-		asignedPlayerCount++;
-
-		if(asignedPlayerCount >= minPlayer) {
+		if(assignedPlayerCount >= minPlayer) {
 			playing = true;
 			playingGames++;
 		}
@@ -41,11 +49,12 @@ public class Game {
 		player.satisfaction = (float) 1 / (preferenceNumber+1);
 		return true;
 	}
+
 	void removePlayer(Player player){
 
-		asignedPlayerCount--;
-		assignedPlayers[asignedPlayerCount] = null;
-		if(asignedPlayerCount < minPlayer) {
+		assignedPlayerCount--;
+		assignedPlayers[assignedPlayerCount] = null;
+		if(assignedPlayerCount < minPlayer) {
 			playing = false;
 			playingGames--;
 		}
