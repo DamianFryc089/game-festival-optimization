@@ -1,2 +1,2 @@
-module GryPlanszowe {
+module game.festival.optimization {
 }

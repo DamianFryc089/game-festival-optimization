@@ -4,14 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="be8c5eec-054a-4a30-8cec-4c7c2e79bee6" name="Changes" comment="Added DataLoader and Solver to make Main smaller">
+    <list default="true" id="be8c5eec-054a-4a30-8cec-4c7c2e79bee6" name="Changes" comment="Last Version">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gry.txt" beforeDir="false" afterPath="$PROJECT_DIR$/gry.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/preferencje.txt" beforeDir="false" afterPath="$PROJECT_DIR$/preferencje.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pl/edu/pwr/student/damian_fryc/lab2/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pl/edu/pwr/student/damian_fryc/lab2/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pl/edu/pwr/student/damian_fryc/lab2/Solver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pl/edu/pwr/student/damian_fryc/lab2/Solver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stoliki.txt" beforeDir="false" afterPath="$PROJECT_DIR$/stoliki.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,27 +36,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Debug",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Debug&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="pl.edu.pwr.student.damian_fryc.lab2.Main" />
-      <module name="GryPlanszowe" />
+      <module name="game-festival-optimization" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="pl.edu.pwr.student.damian_fryc.lab2.*" />
@@ -97,7 +91,10 @@
       <updated>1730376608730</updated>
       <workItem from="1730376612273" duration="52000" />
       <workItem from="1730555957136" duration="15908000" />
-      <workItem from="1730577496034" duration="3255000" />
+      <workItem from="1730577496034" duration="5094000" />
+      <workItem from="1730715439460" duration="1389000" />
+      <workItem from="1730718935165" duration="1062000" />
+      <workItem from="1731929730831" duration="12000" />
     </task>
     <task id="LOCAL-00001" summary="Added DataLoader and Solver to make Main smaller">
       <option name="closed" value="true" />
@@ -107,7 +104,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730577796263</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Last Version">
+      <option name="closed" value="true" />
+      <created>1730581211302</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1730581211302</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -115,6 +120,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added DataLoader and Solver to make Main smaller" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added DataLoader and Solver to make Main smaller" />
+    <MESSAGE value="Last Version" />
+    <option name="LAST_COMMIT_MESSAGE" value="Last Version" />
   </component>
 </project>
